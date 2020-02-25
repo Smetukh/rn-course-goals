@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 3327,
-  "expoServerNgrokUrl": "https://rc-653.anonymous.rn-course-goals.exp.direct",
-  "packagerNgrokUrl": "https://packager.rc-653.anonymous.rn-course-goals.exp.direct",
-  "ngrokPid": 3357,
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "webpackServerPort": null
 }
