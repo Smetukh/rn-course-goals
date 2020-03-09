@@ -1,12 +1,7 @@
-// Imports: Dependencies
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
-// Imports: Redux Root Reducer
 import todosReducer from './reducers/todos';
-
-
-// Imports: Redux Root Saga
 import rootSaga from '../sagas';
 
 // Middleware: Redux Saga

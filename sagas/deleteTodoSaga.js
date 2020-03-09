@@ -1,9 +1,8 @@
 import { takeEvery, put } from 'redux-saga/effects';
-import { SET_GOAL, setCourseGoals } from '../store/actions/todos';
+import { SET_GOAL } from '../store/actions/todos';
 
 
 export function* createTodo(action) {
-    console.log('action = ', action)
     try {
       yield put({type:'SET_GOAL_SUCCESS', action});
     } catch (error) {

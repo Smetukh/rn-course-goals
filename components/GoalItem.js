@@ -1,23 +1,16 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import {bindActionCreators} from "redux";
-import { useSelector, connect } from 'react-redux';
+import { StyleSheet, TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux';
 import { ListItem } from 'react-native-elements'
 
 const GoalItem = props => {
-  // const availableGoals = useSelector(state => state.todos.todos);
   return (
     <TouchableOpacity onPress={props.onDelete.bind(this, props.id)} >
       <ListItem
         key={props.id}
         title={props.title}
-        // leftIcon={{ name: item.icon }}
-        bottomDivider
         chevron
       />
-      {/* <View style={styles.listItem}>
-        <Text>{props.title}</Text>
-      </View> */}
     </TouchableOpacity>
   );
 };
@@ -37,8 +30,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  // toggleMenu: bindActionCreators(actionCreatorsMenu, dispatch).toggleMenu,
-  // channelUpdate: bindActionCreators(actionCreatorsChannels, dispatch).channelUpdate
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GoalItem);

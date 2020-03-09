@@ -12,7 +12,6 @@ export const setCourseGoals = currentGoals => {
 };
 
 export const setCourseGoalsSuccess = action => {
-    console.log('SET_GOAL_SUCCESS action.payload = ', action.payload)
     return {
         type: SET_GOAL_SUCCESS,
         payload: action.payload,
@@ -27,7 +26,6 @@ export const deleteCourseGoals = goalId => {
 };
 
 export const deleteCourseGoalsSuccess = action => {
-    console.log('DELETE_GOAL_SUCCESS action.payload = ', action.payload)
     return {
         type: DELETE_GOAL_SUCCESS,
         payload: action.payload,
