@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Button, FlatList } from 'react-native';
+import { StyleSheet, View, FlatList } from 'react-native';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import {bindActionCreators} from "redux";
 import { useSelector, connect } from 'react-redux';
+import { Button, ThemeProvider } from 'react-native-elements';
 
 import GoalItem from '../components/GoalItem';
 import GoalInput from '../components/GoalInput';
@@ -12,6 +13,14 @@ import todosReducer from '../store/reducers/todos';
 import * as actionCreatorsTodos from '../store/actions/todos';
 
 
+const theme = {
+  Button: {
+    raised: true,
+    titleStyle: {
+      color: 'violet',
+    },
+  },
+};
 
 function Home (props) {
   const [isAddMode, setIsAddMode] = useState(false);
@@ -31,7 +40,10 @@ function Home (props) {
 
   return (
       <View style={styles.screen}>
-        <Button title="Add New Goal" onPress={() => setIsAddMode(true)} />
+        <ThemeProvider theme={theme}>
+          <Button title="Add New Goal" onPress={() => setIsAddMode(true)} />
+        </ThemeProvider>
+        
         <GoalInput
           visible={isAddMode}
           onAddGoal={addGoalHandler}

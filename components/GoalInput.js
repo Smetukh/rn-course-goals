@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, Modal } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { Input } from 'react-native-elements';
 
 const GoalInput = props => {
   const [enteredGoal, setEnteredGoal] = useState('');
@@ -16,7 +18,8 @@ const GoalInput = props => {
   return (
     <Modal visible={props.visible} animationType="slide">
       <View style={styles.inputContainer}>
-        <TextInput
+        <Input
+        leftIcon={{ type: 'font-awesome', name: 'chevron-left' }}
           placeholder="Course Goal"
           style={styles.input}
           onChangeText={goalInputHandler}
