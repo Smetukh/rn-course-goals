@@ -5,7 +5,6 @@ import { useSelector, connect } from 'react-redux';
 
 const GoalItem = props => {
   // const availableGoals = useSelector(state => state.todos.todos);
-  console.log('todos = ', props.todos)
   return (
     <TouchableOpacity onPress={props.onDelete.bind(this, props.id)} >
       <View style={styles.listItem}>

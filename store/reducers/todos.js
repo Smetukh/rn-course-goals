@@ -1,4 +1,4 @@
-import { SET_GOAL, SET_GOAL_SUCCESS } from '../actions/todos';
+import { DELETE_GOAL_SUCCESS, SET_GOAL_SUCCESS } from '../actions/todos';
 
 const initialState = {
   todos: [
@@ -10,13 +10,12 @@ const initialState = {
 
 const todosReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_GOAL:
-      console.log('action.payload = ', action.payload)
-      return { ...state, todos: state.todos.concat(action.payload) };
 
     case SET_GOAL_SUCCESS:
-      console.log('action.payload = ', action)
-      return state;
+      return { ...state, todos: state.todos.concat(action.payload) };
+
+    case DELETE_GOAL_SUCCESS:
+      return { ...state, todos: state.todos.filter(goal => goal.id !== action.payload.goalId) };
       
     default:
       return state;

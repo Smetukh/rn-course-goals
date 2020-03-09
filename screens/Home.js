@@ -14,22 +14,15 @@ import * as actionCreatorsTodos from '../store/actions/todos';
 
 
 function Home (props) {
-  const [courseGoals, setCourseGoals] = useState([]);
   const [isAddMode, setIsAddMode] = useState(false);
 
   const addGoalHandler = goalTitle => {
-    setCourseGoals(currentGoals => [
-      ...currentGoals,
-      { id: Math.random().toString(), value: goalTitle }
-    ]);
     setIsAddMode(false);
     props.setCourseGoals({ id: Math.random().toString(), value: goalTitle });
   };
 
   const removeGoalHandler = goalId => {
-    setCourseGoals(currentGoals => {
-      return currentGoals.filter(goal => goal.id !== goalId);
-    });
+    props.deleteCourseGoals({ goalId });
   };
 
   const cancelGoalAdditionHandler = () => {
@@ -72,7 +65,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   setCourseGoals: bindActionCreators(actionCreatorsTodos, dispatch).setCourseGoals,
-  // channelUpdate: bindActionCreators(actionCreatorsChannels, dispatch).channelUpdate
+  deleteCourseGoals: bindActionCreators(actionCreatorsTodos, dispatch).deleteCourseGoals,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
