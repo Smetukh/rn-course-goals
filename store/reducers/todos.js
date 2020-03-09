@@ -1,4 +1,4 @@
-import { SET_GOAL } from '../actions/todos';
+import { SET_GOAL, SET_GOAL_SUCCESS } from '../actions/todos';
 
 const initialState = {
   todos: [
@@ -14,6 +14,10 @@ const todosReducer = (state = initialState, action) => {
       console.log('action.payload = ', action.payload)
       return { ...state, todos: state.todos.concat(action.payload) };
 
+    case SET_GOAL_SUCCESS:
+      console.log('action.payload = ', action)
+      return state;
+      
     default:
       return state;
   }

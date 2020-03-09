@@ -5,11 +5,11 @@ import { Provider } from 'react-redux';
 import {bindActionCreators} from "redux";
 import { useSelector, connect } from 'react-redux';
 
-import GoalItem from './GoalItem';
-import GoalInput from './GoalInput';
+import GoalItem from '../components/GoalItem';
+import GoalInput from '../components/GoalInput';
 
 import todosReducer from '../store/reducers/todos';
-import * as actionCreatorsTodos from './../store/actions/todos';
+import * as actionCreatorsTodos from '../store/actions/todos';
 
 
 

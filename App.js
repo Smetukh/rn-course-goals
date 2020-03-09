@@ -1,16 +1,14 @@
 import React from 'react';
-import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import Home from './components/Home';
-
+import createSagaMiddleware from 'redux-saga'
+import Home from './screens/Home';
+import { helloSaga } from './sagas'
 
 import todosReducer from './store/reducers/todos';
+// Imports: Redux Store
+import configureStore from './store/store';
 
-const rootReducer = combineReducers({
-  todos: todosReducer
-});
-
-const store = createStore(rootReducer);
+const store = configureStore();
 
 function App () {
 
