@@ -1,9 +1,12 @@
 import { call, put, takeEvery, all } from 'redux-saga/effects';
-import todosSaga from './todosSaga';
+import createTodoSaga from './createTodoSaga';
+import deleteTodoSaga from './deleteTodoSaga';
 
 function* rootSaga() {
     yield all([
-        todosSaga
+      createTodoSaga,
+      deleteTodoSaga,
+
     ])
   };
 

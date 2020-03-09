@@ -16,10 +16,3 @@ export default function* watchSetGoal() {
     yield takeEvery(SET_GOAL, createTodo);
 
 }
-
-// export default rootSaga;
-
-
-// export function* helloSaga() {
-//     console.log('Hello Sagas!')
-//   }
