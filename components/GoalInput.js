@@ -19,7 +19,13 @@ const GoalInput = props => {
     <Modal visible={props.visible} animationType="slide">
       <View style={styles.inputContainer}>
         <Input
-        leftIcon={{ type: 'font-awesome', name: 'chevron-left' }}
+        leftIcon={
+          <Icon
+            style={styles.inputIcon}
+            name='user'
+            size={24}
+            color='black'
+          />}
           placeholder="Course Goal"
           style={styles.input}
           onChangeText={goalInputHandler}
@@ -49,15 +55,20 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderWidth: 1,
     padding: 10,
-    marginBottom: 10
+    marginBottom: 10,
+    paddingBottom: 10,
   },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: '60%'
+    width: '60%',
+    paddingTop: 10,
   },
   button: {
     width: '40%'
+  },
+  inputIcon: {
+    paddingRight: 10,
   }
 });
 

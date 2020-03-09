@@ -2,14 +2,22 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import {bindActionCreators} from "redux";
 import { useSelector, connect } from 'react-redux';
+import { ListItem } from 'react-native-elements'
 
 const GoalItem = props => {
   // const availableGoals = useSelector(state => state.todos.todos);
   return (
     <TouchableOpacity onPress={props.onDelete.bind(this, props.id)} >
-      <View style={styles.listItem}>
+      <ListItem
+        key={props.id}
+        title={props.title}
+        // leftIcon={{ name: item.icon }}
+        bottomDivider
+        chevron
+      />
+      {/* <View style={styles.listItem}>
         <Text>{props.title}</Text>
-      </View>
+      </View> */}
     </TouchableOpacity>
   );
 };

@@ -16,6 +16,7 @@ import * as actionCreatorsTodos from '../store/actions/todos';
 const theme = {
   Button: {
     raised: true,
+    color: 'red',
     titleStyle: {
       color: 'violet',
     },
@@ -41,7 +42,9 @@ function Home (props) {
   return (
       <View style={styles.screen}>
         <ThemeProvider theme={theme}>
-          <Button title="Add New Goal" onPress={() => setIsAddMode(true)} />
+          <Button 
+            title="Add New Goal" 
+            onPress={() => setIsAddMode(true)} />
         </ThemeProvider>
         
         <GoalInput
