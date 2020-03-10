@@ -1,21 +1,60 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { connect } from 'react-redux';
-import { ListItem } from 'react-native-elements'
+import { ListItem, Button, ThemeProvider } from 'react-native-elements'
+
+
+const theme = {
+  Button: {
+    raised: true,
+    buttonStyle: {
+      marginTop: 10,
+      backgroundColor: 'red',
+    },
+    titleStyle: {
+      color: 'violet',
+    },
+
+    
+  },
+};
 
 const GoalItem = props => {
   return (
-    <TouchableOpacity onPress={props.onDelete.bind(this, props.id)} >
-      <ListItem
-        key={props.id}
-        title={props.title}
-        chevron
-      />
-    </TouchableOpacity>
+    <View  >
+      <ThemeProvider theme={theme}>
+        <View style={styles.goalItemContainer}>
+          <View style={styles.goalItem}>
+            <ListItem
+              key={props.id}
+              title={props.title}
+              chevron
+            />
+          </View>
+          <TouchableOpacity style={styles.goalItemDelete}>
+            <Button
+              onPress={props.onDelete.bind(this, props.id)}
+              title="Delete" 
+            />
+          </TouchableOpacity>
+        </View>
+      </ThemeProvider>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  goalItemDelete: {
+    width: '20%',
+    minWidth: 50,
+  },
+  goalItem: {
+    width: '80%',
+  },
+  goalItemContainer: {
+    flex: 1,
+    flexDirection: 'row',
+  },
   listItem: {
     padding: 10,
     marginVertical: 10,

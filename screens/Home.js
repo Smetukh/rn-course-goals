@@ -12,7 +12,6 @@ import * as actionCreatorsTodos from '../store/actions/todos';
 const theme = {
   Button: {
     raised: true,
-    color: 'red',
     titleStyle: {
       color: 'violet',
     },
